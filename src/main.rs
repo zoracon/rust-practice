@@ -5,11 +5,11 @@ use std::fs::File;
 use x509_parser::pem::Pem;
 
 // Resolves host
-fn resolve(host: &str) -> std::io::Result<()> {
+fn resolve(host: &str) -> std::io::Result<String> {
   // Still struggling with type handling upon Result/Error,
   // but managed to get better output
-  let ips: Vec<std::net::IpAddr> = lookup_host(host).unwrap();
-  Ok(println!("The hostname {:?}, resolves to these IPs: {:?}", host, ips))
+  let ips: Vec<std::net::IpAddr> = lookup_host(host)?;
+  Ok(format!("The hostname {:?}, resolves to these IPs: {:?}", host, ips))
 }
 
 // Main process
