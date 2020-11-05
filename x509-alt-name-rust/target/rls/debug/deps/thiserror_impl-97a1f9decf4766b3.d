@@ -1,0 +1,11 @@
+/home/alexis/Documents/Rust/repo/Rust/xfiveohnine/target/rls/debug/deps/libthiserror_impl-97a1f9decf4766b3.so: /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/lib.rs /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/ast.rs /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/attr.rs /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/expand.rs /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/fmt.rs /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/prop.rs /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/valid.rs
+
+/home/alexis/Documents/Rust/repo/Rust/xfiveohnine/target/rls/debug/deps/thiserror_impl-97a1f9decf4766b3.d: /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/lib.rs /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/ast.rs /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/attr.rs /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/expand.rs /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/fmt.rs /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/prop.rs /home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/valid.rs
+
+/home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/lib.rs:
+/home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/ast.rs:
+/home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/attr.rs:
+/home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/expand.rs:
+/home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/fmt.rs:
+/home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/prop.rs:
+/home/alexis/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.21/src/valid.rs:
