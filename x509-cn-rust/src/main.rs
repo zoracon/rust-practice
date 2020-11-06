@@ -7,7 +7,7 @@ use x509_parser::pem::Pem;
 // Resolves host
 fn resolve(host: &str) -> std::io::Result<String> {
   let ips: Vec<std::net::IpAddr> = lookup_host(host)?;
-  Ok(format!("The hostname {:?}, resolves to these IPs: {:?}", host, ips))
+  Ok(format!("The common name {:?}, resolves to these IPs: {:?}", host, ips))
 }
 
 // Main process
@@ -24,10 +24,10 @@ fn main() {
     .get_matches();
 
   let path = matches.value_of("INPUT").unwrap();
-  let file = std::fs::File::open(path).unwrap();
+  let file = File::open(path).unwrap();
 
   //Pass Pem and Parse Pem
-  let subject = x509_parser::pem::Pem::read(std::io::BufReader::new(file))
+  let subject = Pem::read(std::io::BufReader::new(file))
     .unwrap().0
     .parse_x509().unwrap()
     .tbs_certificate.subject.to_string();

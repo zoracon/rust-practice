@@ -1,6 +1,5 @@
 use clap::{Arg, App};
 use dns_lookup::{lookup_host};
-use std::net::{IpAddr};
 use std::fs::File;
 use x509_parser::pem::Pem;
 
@@ -35,15 +34,26 @@ fn main() {
     .get_matches();
 
   let path = matches.value_of("INPUT").unwrap();
-  let file = std::fs::File::open(path).unwrap();
+  let file = File::open(path).unwrap();
 
   //Pass Pem and Parse Pem
-  match resolve_altnames(x509_parser::pem::Pem::read(std::io::BufReader::new(file))
+  match resolve_altnames(Pem::read(std::io::BufReader::new(file))
     .unwrap().0
     .parse_x509().unwrap()
     .tbs_certificate.subject_alternative_name()) {
         Ok(ok_message) => println!("{:?}", ok_message),
         Err(err) => println!("Error: {:?}", err)
     }
+
+  // #[cfg(test)]
+  // mod tests {
+  //     use super::*;
+
+  //     #[test]
+  //     fn test_file() {
+  //       let mut test_pem = File::open("foo.pem").unwrap();
+  //       assert_eq!(test_pem[..4], ".pem");
+  //     }
+  // }
 }
 
