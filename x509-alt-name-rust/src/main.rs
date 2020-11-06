@@ -1,30 +1,27 @@
 use clap::{Arg, App};
 use dns_lookup::{lookup_host};
-use std::net::{IpAddr, Ipv4Addr, Ipv6Addr};
+use std::net::{IpAddr};
 use std::fs::File;
 use x509_parser::pem::Pem;
 
 // Resolves host
 fn resolve_altnames(hosts: Option<(bool, &x509_parser::extensions::SubjectAlternativeName)>) -> std::io::Result<String> {
   let unwp = hosts.unwrap();
-  let mut parsed_host = String::from("Init");
+  let mut _parsed_host = String::from("Init");
   let mut parsed_host_concat = Vec::<String>::new();
-  let mut ips: Vec<std::net::IpAddr> = Vec::new();
-  let mut ips_concat = Vec::new();
+  let mut ips = Vec::new();
 
   for host in &unwp.1.general_names {
     let stringed_host = format!("{:?}",host).to_string();
     let stringed_host_len = &stringed_host.len() - 2;
-    parsed_host = stringed_host[9..stringed_host_len].to_string();
-    parsed_host_concat.push(String::from(&parsed_host));
-    ips = lookup_host(&parsed_host)?;
-    ips_concat.append(&mut ips);
+    _parsed_host = stringed_host[9..stringed_host_len].to_string();
+    parsed_host_concat.push(String::from(&_parsed_host));
+    ips.append(&mut lookup_host(&_parsed_host)?);
   }
 
-  Ok(format!("The alt names {:?}, resolves to these IPs: {:?}", parsed_host_concat, ips_concat))
+  Ok(format!("The alt names {:?}, resolves to these IPs: {:?}", parsed_host_concat, ips))
 }
 
-// Main process
 fn main() {
   // Clap boilerplate for command line args
   let matches = App::new("Parse X509")
