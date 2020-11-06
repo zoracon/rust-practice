@@ -1,4 +1,4 @@
-# x509-rust
+# x509-rust subject name
 
 Command line rust project that takes a pem file, parses subject name, and validates host through DNS, and returns all IPs it resolves to.
 
