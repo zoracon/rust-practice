@@ -1,4 +1,4 @@
-# Crypto means Cryptography here
+# "Crypto" means Cryptography here
 
 Just me practicing with Rust as a substitute for different programs I'd normally use like OpenSSL, hash utilities, etc.
 
