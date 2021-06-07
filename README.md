@@ -4,7 +4,7 @@ Just me practicing with Rust as a substitute for different programs I'd normally
 
 ## Project types so far
 
-## 1. x509-rust
+## 1. x509 PEM Parsing
 
 Different tries at parsing x509 certs
 
