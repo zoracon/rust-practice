@@ -5,7 +5,7 @@ To build binary to run anywhere
 
 Reference: `./target/debug/sha256`
 
-# Usage
+#Usage
 
 `cargo run -- -f [file]`
 
