@@ -9,3 +9,6 @@ Different tries at parsing x509 certs
 ## 2. SHA256 Hash
 
 I took from [here](https://rust-lang-nursery.github.io/rust-cookbook/cryptography/hashing.html#calculate-the-sha-256-digest-of-a-file) and added the ability to add any file from your directory instead of hardcoded file names like the example
+
+## 3. CryptoPals Challenges
+- hextobase64
