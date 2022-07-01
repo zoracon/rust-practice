@@ -38,7 +38,7 @@ fn sha256_digest<R: Read>(mut reader: R) -> Result<Digest> {
 fn main() -> Result<()> {
     let matches = App::new("SHA Program")
     .version("0.1.0")
-    .author("zoracon <notrealemail@hack.things>")
+    .author("zoonarc <zooanrc@duck.com>")
     .about("File Name to SHA256")
     .arg(Arg::with_name("file")
             .short("f")
