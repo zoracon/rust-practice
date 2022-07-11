@@ -57,3 +57,16 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn xor() {
+        let str1 = "48656c6c6f20776f726c6421";
+        let str2 = "48656c6c6f20776f726c6425";
+        let hexstr = "000000000000000000000004";
+        assert_eq!(hexstr, fixed_xor(str1, str2));
+    }
+}
+
