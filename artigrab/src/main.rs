@@ -7,9 +7,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let config = TorClientConfig::default();
     let tor_client = TorClient::create_bootstrapped(config).await?;
 
-    let mut stream = tor_client.connect(("example.com", 80)).await?;
+    let mut stream = tor_client.connect(("icanhazip.com", 80)).await?;
     stream
-        .write_all(b"GET / HTTP/1.1\r\nHost: example.com\r\nConnection: close\r\n\r\n")
+        .write_all(b"GET / HTTP/1.1\r\nHost: icanhazip.com\r\nConnection: close\r\n\r\n")
         .await?;
     stream.flush().await?;
 
