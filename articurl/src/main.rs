@@ -2,6 +2,8 @@ use arti_client::{TorClient, TorClientConfig};
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use clap::{Arg, App};
 
+// TODO: Add Port Option
+
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
