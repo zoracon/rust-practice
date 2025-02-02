@@ -4,12 +4,11 @@ Rust application that installs XAPK files using the `adb` command.
 
 ## Usage
 
-XAPK files in given directory, will extract the XAPK into it's own directory, and install them using the `adb` command. Ensure that your device is connected and `adb` is set up correctly.
+Takes XAPK file in given input, will extract the XAPK into it's own directory, and install them using the `adb` command. Ensure that your device is connected and `adb` is set up correctly with `adb devices` check.
 
 ## Requirements
 - Rust (latest)
 - ADB (Android Debug Bridge) installed and configured
-[TODO]: Might add support to install for the user!
 
 ## Building the Project
 
@@ -24,5 +23,10 @@ cargo build --release
 To run the application, use the following command:
 
 ```
-cargo run
+cargo run [path to xapk]
 ```
+
+Further tasks:
+- [ ] Incorporate [`apkeep`](https://github.com/EFForg/apkeep).
+- [ ] Install `adb` for user if it's not.
+- [ ] Package as a global tool
