@@ -23,7 +23,7 @@ pub enum XapkExtractorError {
     AnyHowError(#[from] anyhow::Error),
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+fn main() -> Result<(), XapkExtractorError> {
     // 1. Get XAPK path from command-line arguments
     let args: Vec<String> = env::args().collect();
 
@@ -66,11 +66,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // 3. Install APKs using adb install-multiple
     let apks_dir = output_dir.clone();
-    let apks = fs::read_dir(&apks_dir)?;
+    let apks = fs::read_dir(&apks_dir).context("Failed to read director of extracted apks")?;
 
     let mut apk_files: Vec<String> = Vec::new();
     for entry in apks {
-        let entry = entry?;
+        let entry = entry.context("failed to enter apk director")?;
         let path = entry.path();
         if path.is_file() && path.extension().map_or(false, |ext| ext == "apk") {
             apk_files.push(path.to_str().unwrap().to_string());
@@ -91,7 +91,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         adb_command.arg(apk);
     }
 
-    let output = adb_command.output()?;
+    let output = adb_command.output().context("Failed to execute adb install-multiple")?;
 
     if output.status.success() {
         println!("APK installation successful!");
@@ -99,7 +99,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     } else {
         eprintln!("APK installation failed!");
         eprintln!("{}", String::from_utf8_lossy(&output.stderr));
-        return Err("ADB installation failed".into());
+        return Err(XapkExtractorError::AnyHowError(anyhow::anyhow!("APK installation failed")));
     }
 
     Ok(())
