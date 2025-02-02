@@ -81,7 +81,7 @@ fn main() -> Result<(), XapkExtractorError> {
 
     if apk_files.is_empty() {
         println!("No APK files found in {}", apks_dir);
-        return Ok(()); // Or return an error if you require APKs
+        return Ok(()); // No APK files found
     }
 
     let mut adb_command = Command::new("adb");
