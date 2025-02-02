@@ -1,6 +1,10 @@
-# My Rust Project
+# XAPK Extractor
 
-This project is a Rust application that installs XAPK files using the ADB command.
+Rust application that installs XAPK files using the `adb` command.
+
+## Usage
+
+XAPK files in given directory, will extract the XAPK into it's own directory, and install them using the `adb` command. Ensure that your device is connected and `adb` is set up correctly.
 
 ## Requirements
 - Rust (latest)
@@ -22,8 +26,3 @@ To run the application, use the following command:
 ```
 cargo run
 ```
-Make sure to provide the necessary APK files in the specified directory.
-
-## Usage
-
-XAPK files in given directory, will extract the XAPK into it's own directory, and install them using the `adb` command. Ensure that your device is connected and `adb` is set up correctly.
