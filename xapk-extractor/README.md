@@ -18,15 +18,18 @@ To build the project, navigate to the project directory and run:
 cargo build --release
 ```
 
-## Running the Application
+## Install the Application
 
 To run the application, use the following command:
-
 ```
-cargo run [path to xapk]
+cargo install --path .
+```
+
+## Use the Application
+```
+xapk_extractor [path to xapk]
 ```
 
 Further tasks:
 - [ ] Incorporate [`apkeep`](https://github.com/EFForg/apkeep).
 - [ ] Install `adb` for user if it's not.
-- [ ] Package as a global tool
