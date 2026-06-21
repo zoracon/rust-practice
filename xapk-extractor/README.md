@@ -20,13 +20,14 @@ cargo build --release
 
 ## Running the Application
 
-To run the application, use the following command:
+To run the application, install using use the following command:
+
+`cargo install --path .`
 
 ```
 cargo run [path to xapk]
 ```
 
-Further tasks:
+Further possible tasks:
 - [ ] Incorporate [`apkeep`](https://github.com/EFForg/apkeep).
 - [ ] Install `adb` for user if it's not.
-- [ ] Package as a global tool
